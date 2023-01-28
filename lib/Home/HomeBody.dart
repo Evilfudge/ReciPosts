@@ -43,6 +43,7 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        //silder
         Container(
 
           height: Diminsions.pageView,
@@ -53,6 +54,7 @@ class _HomeBodyState extends State<HomeBody> {
                 return _buildPageItem(position);
               }),
         ),
+        //dots slide indicators
     new DotsIndicator(
     dotsCount: 5,
     position: _currentPageValue,
@@ -62,8 +64,79 @@ class _HomeBodyState extends State<HomeBody> {
     activeSize: const Size(18.0, 9.0),
     activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
     ),
-    )
+    ),
+        //recent part header
+        SizedBox(height: Diminsions.height30,),
+        Container(
+          margin: EdgeInsets.only(left: Diminsions.width30),
+          child: Row(
+            children: [
+              BText(text: "Recent")
+            ],
+          ),
+        ),
+        //list of recent      
+          ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, bottom: Diminsions.height10),
+              child: Row(
+                children: [
+                  //recipy image
+                  Container(
+                    width: Diminsions.imgSize,
+                    height: Diminsions.imgSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(Diminsions.radius20), bottomLeft: Radius.circular(Diminsions.radius20)),
+                      color: Colors.white30,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/image/food1.jpeg")
+                      )
+                    ),
+                  ),
+                  //recipy text
+                  Expanded(
+                    child: Container(
+                            height: Diminsions.textContainerSize,     
+                            decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), bottomRight: Radius.circular(Diminsions.radius20)),
+                            color: Colors.white
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: Diminsions.width10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          BText(text: "Burger recipy", color: Colors.black38,),
+                          SizedBox(height: Diminsions.height10,),
+                          SText(text: "create by someone"),
+                          SizedBox(height: Diminsions.height10,),
+                           Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+
+                       IconAndText(icon: Icons.circle_sharp, text: "Easy", color: colorPallete.light, iconColor: colorPallete.prime),
+                       IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: colorPallete.light, iconColor: colorPallete.prime)
+                      ],
+                    )
+                        ],
+                      ),
+                      ),
+                      
+                  ))
+                ],
+              ),
+            );
+        }),
+        
+   
       ],
+      
     );
   }
   Widget _buildPageItem(int index){

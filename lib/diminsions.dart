@@ -22,6 +22,8 @@ class Diminsions{
   static double radius20 = screenHeight / 42.2;
   static double radius30 = screenHeight / 28.13;
   static double iconSizeDefault = screenHeight / 35.17;
+  static double imgSize = screenWidth / 3.25;
+  static double textContainerSize = screenWidth / 2.9;
 
 
 }
