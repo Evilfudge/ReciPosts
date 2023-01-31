@@ -1,1 +1,222 @@
-<mxfile host="app.diagrams.net" modified="2023-01-31T03:04:46.081Z" agent="5.0 (Windows)" etag="6bxjEEvsu_s4ncprrYeh" version="20.8.13" type="github"><diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">7ZjLcpswFIafhmU6XIyNl7Zz6SKdZJrOpFnKcAJqBGKEiHGfvhKIO4md2rhupytLvy6I/zs6h7FmrcLshqE4+EI9IJqpe5lmXWqmaZi6JX6ksi2UmWMXgs+wpybVwgP+CUrUlZpiD5LWRE4p4Thuiy6NInB5S0OM0U172jMl7afGyIee8OAi0lcfsceDQnVsvdY/A/aD8smGrkZCVE5WQhIgj24aknWlWStGKS9aYbYCIs0rfSnWXb8xWh2MQcT3WWBF6fI6Y3N3e6vH0d3jNxPdXKhdXhFJ1Qtr1uJu/UNaWZyab0srxAvEspmG5BY/A8GR6C1jYDgEDkyMECXf19pSgOFIaHLcyPuEoDjB63xbXSgM3JQl+BW+QlLwz1WaRh54qleZl3c4oy8VDrlp34vyxYBxyBqS8uYGqDgg24opdagWS1SgOqq7qalXbIMGcasUkYo0v9q6hiEaiscH2Jh9Nl0kMcURz59rLzX7soODMh5Qn0aINIEcaOy7YbS32xO7ZfZsyOy+18Z8LK+tntceTmLE3aDnuXxJLBLEgmA/EtKack7D3D3E+ELmHOm92EpoEHmlsibUfSmnqUTnHJuA2NuH9+apGAKvlfb6nBgQxMWdbCfUAdvV0nsZiTXfC2MYcLlDQlPmglrUYVed4vdxTv7hq2O381SVt3bcHWesq2P/LyFZpxScTQmZ/j33wP6o250SMmj2QAmZjuX1rOc1A56yaP8C0igWNAYxtPRQEuQ+G8Vwo2xAhvl3ZbpsP8n2p7l9QKQXSXl3OJ1LkTFn7RAwrWl7i+Kgo1UZ5wgfDQMfCAIL21ZoZefpwBS2E6y5J9jpnwHbu7Qjfz7Me2AFOrJGAs9RwBonA7vvjZ2cCOykXSHNbuUbGWxZEU6dpI0TJunJmd3lLnJ7dqQkLbr1vyfF9Po/KOvqFw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-01-31T04:25:21.395Z" agent="5.0 (Windows)" etag="N0wcvcma8yEqH2GzxKpJ" version="20.8.13" type="github">
+  <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
+    <mxGraphModel dx="1203" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="Detail&#xa;Detail" id="EVx286sHddwVaiX6GFmi-5">
+          <mxCell style="locked=1;" parent="0" />
+        </object>
+        <mxCell id="EVx286sHddwVaiX6GFmi-8" value="&lt;h1&gt;Main Scenario&lt;/h1&gt;&lt;p&gt;The User can browse available recipes displayed in the Recipes page. Tapping on a recipe card will send the user to the Instructions page.&lt;br&gt;&lt;br&gt;The User can select the different valid parameters for the recipe, which will change the recipe instructions &amp;nbsp;&lt;br&gt;&lt;/p&gt;&lt;h1&gt;Alt Scenario&lt;/h1&gt;&lt;p&gt;The User specifies the recipe in the Main Menu page by tapping the search button. &lt;br&gt;&lt;br&gt;The search result will be listed under the search text field. If the user taps on a recipe option, they are sent directly to the Instructions page&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="EVx286sHddwVaiX6GFmi-5">
+          <mxGeometry x="40" y="40" width="190" height="390" as="geometry" />
+        </mxCell>
+        <object label="Lifeline" id="EVx286sHddwVaiX6GFmi-7">
+          <mxCell style="" parent="0" />
+        </object>
+        <mxCell id="EVx286sHddwVaiX6GFmi-127" value=":HomePage" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=0;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="430" y="40" width="100" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-126" value=":Firebase &#xa;Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=0;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="630" y="40" width="100" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-125" value=":Recipes" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=0;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="830" y="40" width="100" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-124" value=":Instructions" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=0;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="1030" y="40" width="100" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-66" value="" style="group" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="830" y="80" width="100" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-68" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-66">
+          <mxGeometry x="45" y="120" width="10" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-72" value="" style="group" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="630" y="80" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-74" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-72">
+          <mxGeometry x="45" y="80" width="10" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-105" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-72" target="EVx286sHddwVaiX6GFmi-91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="55" y="200" as="sourcePoint" />
+            <mxPoint x="380" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-106" value="cardInstructions()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-105">
+          <mxGeometry x="-0.313" y="2" relative="1" as="geometry">
+            <mxPoint x="-35" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-75" value="" style="group" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="430" y="80" width="100" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-77" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-75">
+          <mxGeometry x="45" y="40" width="10" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-87" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;size=40;" vertex="1" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="310" y="70" width="20" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-88" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-87">
+          <mxGeometry x="5" y="50" width="10" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-89" value="" style="group" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-7">
+          <mxGeometry x="1030" y="80" width="100" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-91" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-89">
+          <mxGeometry x="45" y="200" width="10" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-93" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="EVx286sHddwVaiX6GFmi-7" source="EVx286sHddwVaiX6GFmi-77" target="EVx286sHddwVaiX6GFmi-74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="200" as="sourcePoint" />
+            <mxPoint x="660" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-94" value="1.1: fetchRecipes(onTap())" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-93">
+          <mxGeometry x="-0.4112" y="1" relative="1" as="geometry">
+            <mxPoint x="36" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-95" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-7" source="EVx286sHddwVaiX6GFmi-74" target="EVx286sHddwVaiX6GFmi-68">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="240" as="sourcePoint" />
+            <mxPoint x="720" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-96" value="cardRecipe()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-95">
+          <mxGeometry x="-0.313" y="2" relative="1" as="geometry">
+            <mxPoint x="20" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-103" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-7" source="EVx286sHddwVaiX6GFmi-68" target="EVx286sHddwVaiX6GFmi-74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="320" as="sourcePoint" />
+            <mxPoint x="800" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-104" value="fetchInstructions(onTap)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-103">
+          <mxGeometry x="0.3873" y="-1" relative="1" as="geometry">
+            <mxPoint x="47" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-107" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-7" source="EVx286sHddwVaiX6GFmi-91" target="EVx286sHddwVaiX6GFmi-68">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="290" as="sourcePoint" />
+            <mxPoint x="770" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-108" value="pop(context)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-107">
+          <mxGeometry x="0.2969" relative="1" as="geometry">
+            <mxPoint x="22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-113" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-7" source="EVx286sHddwVaiX6GFmi-77" target="EVx286sHddwVaiX6GFmi-88">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="610" y="320" as="sourcePoint" />
+            <mxPoint x="660" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-114" value="Exit Reciposts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-113">
+          <mxGeometry x="-0.2253" y="1" relative="1" as="geometry">
+            <mxPoint x="-17" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-116" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-7" source="EVx286sHddwVaiX6GFmi-68" target="EVx286sHddwVaiX6GFmi-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="885" y="340.0000000000001" as="sourcePoint" />
+            <mxPoint x="485" y="340.0000000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="560" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-117" value="pop(context)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-116">
+          <mxGeometry x="0.2969" relative="1" as="geometry">
+            <mxPoint x="-46" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object label="Activations" id="EVx286sHddwVaiX6GFmi-6">
+          <mxCell style="" parent="0" />
+        </object>
+        <mxCell id="EVx286sHddwVaiX6GFmi-43" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="EVx286sHddwVaiX6GFmi-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="685" y="361" as="sourcePoint" />
+            <mxPoint x="685" y="401.0000000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="685" y="361" />
+              <mxPoint x="735" y="361" />
+              <mxPoint x="735" y="401" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-44" value="2.1: searchVerify(searchRecipe())" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-43">
+          <mxGeometry x="-0.1494" y="-1" relative="1" as="geometry">
+            <mxPoint x="41" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-46" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="EVx286sHddwVaiX6GFmi-6" source="EVx286sHddwVaiX6GFmi-88" target="EVx286sHddwVaiX6GFmi-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="200" as="sourcePoint" />
+            <mxPoint x="460" y="200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-47" value="Open Reciposts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-46">
+          <mxGeometry x="-0.4112" y="1" relative="1" as="geometry">
+            <mxPoint x="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-115" value="2: onSearch(recipe)" style="verticalAlign=bottom;startArrow=none;endArrow=block;startSize=8;shadow=0;strokeWidth=1;startFill=0;dashed=1;" edge="1" parent="EVx286sHddwVaiX6GFmi-6" source="EVx286sHddwVaiX6GFmi-77" target="EVx286sHddwVaiX6GFmi-74">
+          <mxGeometry x="0.0021" y="-7" relative="1" as="geometry">
+            <mxPoint x="520" y="370.0000000000001" as="sourcePoint" />
+            <mxPoint x="680.3399999999999" y="370.0000000000001" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="510" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-120" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;startSize=4;endSize=4;jumpSize=4;" edge="1" parent="EVx286sHddwVaiX6GFmi-6" source="EVx286sHddwVaiX6GFmi-74" target="EVx286sHddwVaiX6GFmi-91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="340.0000000000001" as="sourcePoint" />
+            <mxPoint x="1080" y="340.0000000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="805" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-121" value="cardInstructions()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EVx286sHddwVaiX6GFmi-120">
+          <mxGeometry x="-0.313" y="2" relative="1" as="geometry">
+            <mxPoint x="-35" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-122" value="opt" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="EVx286sHddwVaiX6GFmi-6">
+          <mxGeometry x="250" y="300" width="850" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="EVx286sHddwVaiX6GFmi-123" value="[Searching a recipe]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="EVx286sHddwVaiX6GFmi-6">
+          <mxGeometry x="340" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
