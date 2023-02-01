@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Column(
                     children: [
-                      BText(text: "Welcome Back!", color: colorPallete.secondary),
+                      BText(text: "Welcome Back!", color: ColorPallete.secondary),
 
                     ],
                   ),
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                       child: Icon(Icons.search,color: Colors.white, size: Diminsions.iconSizeDefault,),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(Diminsions.radius15),
-                        color: colorPallete.prime,
+                        color: ColorPallete.prime,
                       ),
                     ),
                   )

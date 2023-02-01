@@ -6,6 +6,7 @@ import 'package:recies/diminsions.dart';
 import 'package:recies/widgets/BText.dart';
 import 'package:recies/widgets/IconAndText.dart';
 import 'package:recies/widgets/SText.dart';
+import 'package:recies/widgets/recipyTitle.dart';
 
 
 class HomeBody extends StatefulWidget {
@@ -55,15 +56,15 @@ class _HomeBodyState extends State<HomeBody> {
               }),
         ),
         //dots slide indicators
-    new DotsIndicator(
-    dotsCount: 5,
-    position: _currentPageValue,
-    decorator: DotsDecorator(
-    activeColor: colorPallete.prime,
-    size: const Size.square(9.0),
-    activeSize: const Size(18.0, 9.0),
-    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-    ),
+            new DotsIndicator(
+            dotsCount: 5,
+            position: _currentPageValue,
+            decorator: DotsDecorator(
+            activeColor: ColorPallete.prime,
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+            ),
     ),
         //recent part header
         SizedBox(height: Diminsions.height30,),
@@ -120,8 +121,8 @@ class _HomeBodyState extends State<HomeBody> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
 
-                       IconAndText(icon: Icons.circle_sharp, text: "Easy", color: colorPallete.light, iconColor: colorPallete.prime),
-                       IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: colorPallete.light, iconColor: colorPallete.prime)
+                       IconAndText(icon: Icons.circle_sharp, text: "Easy", color: ColorPallete.light, iconColor: ColorPallete.prime),
+                       IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: ColorPallete.light, iconColor: ColorPallete.prime)
                       ],
                     )
                         ],
@@ -212,28 +213,7 @@ class _HomeBodyState extends State<HomeBody> {
               ),
               child: Container(
                 padding: EdgeInsets.only(top: Diminsions.paddingheight15, left: Diminsions.paddingwidth15, right: Diminsions.paddingwidth15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BText(text: "Burger"),
-                    SizedBox(height: Diminsions.height10,),
-                    Row(
-                      children: [
-                        SText(text: "number of recipies"),
-
-                      ],
-                    ),
-                    SizedBox(height: Diminsions.height20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-
-                       IconAndText(icon: Icons.circle_sharp, text: "Easy", color: colorPallete.light, iconColor: colorPallete.prime),
-                       IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: colorPallete.light, iconColor: colorPallete.prime)
-                      ],
-                    )
-                  ],
-                ),
+                child: RecipyTitle(text: "Burger"),
               ),
 
             ),

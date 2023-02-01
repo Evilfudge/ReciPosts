@@ -1,7 +1,7 @@
 
 import 'dart:ui';
 
-class colorPallete{
+class ColorPallete{
   static final Color prime = const Color(0xFFFFE15D);
   static final Color secondary = const Color(0xFFF49D1A);
   static final Color accent = const Color(0xFFDC3535);

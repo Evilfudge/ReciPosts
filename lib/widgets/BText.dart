@@ -17,7 +17,7 @@ class BText extends StatelessWidget {
       maxLines: 1,
       overflow: overflow,
       style: TextStyle(
-        fontFamily: 'Roboto',
+        fontFamily: "Roboto",
         fontSize: size == 0 ? Diminsions.font20 : size,
         color: color,
         fontWeight: FontWeight.w400
