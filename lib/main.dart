@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:recies/pages/Home/HomePage.dart';
+import 'package:recies/pages/auth%20Pages/signIn.dart';
+import 'package:recies/pages/recipy_page/foodRecipy.dart';
 
 
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const SignIn(),
     );
   }
 }

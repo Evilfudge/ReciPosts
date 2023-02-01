@@ -7,8 +7,9 @@ class BText extends StatelessWidget {
   final String text;
   double size;
   TextOverflow overflow;
+   FontWeight fontWeigt ;
 
-  BText({Key? key, this.color = const Color(0xFFFFE15D), required this.text, this.size = 0,this.overflow = TextOverflow.ellipsis}) : super(key: key);
+  BText({Key? key, this.color = const Color(0xFFFFE15D), required this.text, this.size = 0,this.overflow = TextOverflow.ellipsis, this.fontWeigt = FontWeight.w400}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class BText extends StatelessWidget {
         fontFamily: "Roboto",
         fontSize: size == 0 ? Diminsions.font20 : size,
         color: color,
-        fontWeight: FontWeight.w400
+        fontWeight: fontWeigt
       ),
     );
   }
