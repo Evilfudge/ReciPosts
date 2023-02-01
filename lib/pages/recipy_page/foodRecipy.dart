@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../diminsions.dart';
 import '../../widgets/BText.dart';
 import '../../widgets/SText.dart';
-import '../../widgets/appIcons.dart';
+
 import '../../widgets/listViewRecipe.dart';
 import '../../widgets/recipyTitle.dart';
 
@@ -33,16 +33,15 @@ class _FoodRecipyState extends State<FoodRecipy> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-
-
             toolbarHeight: 50,
             title: Row(
                 children: [
-                  AppIcons(icon: Icons.arrow_back),
-
+                  //AppIcons(icon: Icons.arrow_back),
                 ],
             ),
+
             pinned: true,
+
             expandedHeight:300,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(

@@ -1,8 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:recies/colors/colorPallete.dart';
 import 'package:recies/diminsions.dart';
+import 'package:recies/pages/recipy_page/foodRecipy.dart';
 import 'package:recies/widgets/BText.dart';
 import 'package:recies/widgets/IconAndText.dart';
 import 'package:recies/widgets/SText.dart';
@@ -48,12 +51,17 @@ class _HomeBodyState extends State<HomeBody> {
         Container(
 
           height: Diminsions.pageView,
-          child: PageView.builder(
-              controller: pageController,
-              itemCount: 5,
-              itemBuilder: (context, position){
-                return _buildPageItem(position);
-              }),
+          child: GestureDetector(
+            onTap: (){
+              Get.to(() => FoodRecipy());
+            },
+            child: PageView.builder(
+                controller: pageController,
+                itemCount: 5,
+                itemBuilder: (context, position){
+                  return _buildPageItem(position);
+                }),
+          ),
         ),
         //dots slide indicators
             new DotsIndicator(
@@ -78,59 +86,64 @@ class _HomeBodyState extends State<HomeBody> {
         ),
         //list of recent      
           ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, bottom: Diminsions.height10),
-              child: Row(
-                children: [
-                  //recipy image
-                  Container(
-                    width: Diminsions.imgSize,
-                    height: Diminsions.imgSize,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(Diminsions.radius20), bottomLeft: Radius.circular(Diminsions.radius20)),
-                      color: Colors.white30,
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage("assets/image/food1.jpeg")
-                      )
+            return GestureDetector(
+              onTap: (){
+                Get.to(() => FoodRecipy());
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, bottom: Diminsions.height10),
+                child: Row(
+                  children: [
+                    //recipy image
+                    Container(
+                      width: Diminsions.imgSize,
+                      height: Diminsions.imgSize,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(Diminsions.radius20), bottomLeft: Radius.circular(Diminsions.radius20)),
+                        color: Colors.white30,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/image/food1.jpeg")
+                        )
+                      ),
                     ),
-                  ),
-                  //recipy text
-                  Expanded(
-                    child: Container(
-                            height: Diminsions.textContainerSize,     
-                            decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), bottomRight: Radius.circular(Diminsions.radius20)),
-                            color: Colors.white
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(left: Diminsions.width10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    //recipy text
+                    Expanded(
+                      child: Container(
+                              height: Diminsions.textContainerSize,
+                              decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), bottomRight: Radius.circular(Diminsions.radius20)),
+                              color: Colors.white
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: Diminsions.width10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BText(text: "Burger recipy", color: Colors.black38,),
+                            SizedBox(height: Diminsions.height10,),
+                            SText(text: "create by someone"),
+                            SizedBox(height: Diminsions.height10,),
+                             Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          BText(text: "Burger recipy", color: Colors.black38,),
-                          SizedBox(height: Diminsions.height10,),
-                          SText(text: "create by someone"),
-                          SizedBox(height: Diminsions.height10,),
-                           Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
 
-                       IconAndText(icon: Icons.circle_sharp, text: "Easy", color: ColorPallete.light, iconColor: ColorPallete.prime),
-                       IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: ColorPallete.light, iconColor: ColorPallete.prime)
-                      ],
-                    )
+                         IconAndText(icon: Icons.circle_sharp, text: "Easy", color: ColorPallete.light, iconColor: ColorPallete.prime),
+                         IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: ColorPallete.light, iconColor: ColorPallete.prime)
                         ],
-                      ),
-                      ),
-                      
-                  ))
-                ],
+                      )
+                          ],
+                        ),
+                        ),
+
+                    ))
+                  ],
+                ),
               ),
             );
         }),
