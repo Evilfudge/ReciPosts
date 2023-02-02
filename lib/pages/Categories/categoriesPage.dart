@@ -2,11 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:recies/pages/Home/HomePage.dart';
+import 'package:recies/pages/Home/home.dart';
 
-import '../../diminsions.dart';
+import '../../dimensions.dart';
 import '../../widgets/BText.dart';
-import '../../widgets/appIcons.dart';
 import '../../widgets/recipyTitle.dart';
 import '../recipy_page/foodRecipy.dart';
 
@@ -27,9 +26,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: Diminsions.height30,),
+                SizedBox(height: Dimensions.height30,),
                 Container(
-                  margin: EdgeInsets.only(left: Diminsions.width30),
+                  margin: EdgeInsets.only(left: Dimensions.width30),
                   child: Row(
                     children: [
                       //===========================ROUTE PART GO TO MAINPAGE===========================
@@ -38,9 +37,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             Get.to(() => HomePage());
                           },
                     child: Icon(Icons.arrow_back)),
-                      SizedBox(width: Diminsions.width10),
+                      SizedBox(width: Dimensions.width10),
                       //===========================CATEGORY NAME===========================
-                      BText(text: "Category name in here", size: Diminsions.font26, color: Colors.black87,)
+                      BText(text: "Category name in here", size: Dimensions.font26, color: Colors.black87,)
                     ],
                   ),
                 ),
@@ -56,15 +55,15 @@ class _CategoriesPageState extends State<CategoriesPage> {
                           Get.to(() => FoodRecipy());
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, bottom: Diminsions.height10),
+                          margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),
                           child: Row(
                             children: [
                               //===========================RECIPY IMAGE===========================
                               Container(
-                                width: Diminsions.imgSize,
-                                height: Diminsions.imgSize,
+                                width: Dimensions.imgSize,
+                                height: Dimensions.imgSize,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(Diminsions.radius20), bottomLeft: Radius.circular(Diminsions.radius20)),
+                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(Dimensions.radius20), bottomLeft: Radius.circular(Dimensions.radius20)),
                                     color: Colors.white30,
                                     image: DecorationImage(
                                         fit: BoxFit.cover,
@@ -76,13 +75,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
                               //recipy text
                               Expanded(
                                   child: Container(
-                                    height: Diminsions.textContainerSize,
+                                    height: Dimensions.textContainerSize,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), bottomRight: Radius.circular(Diminsions.radius20)),
+                                        borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20), bottomRight: Radius.circular(Dimensions.radius20)),
                                         color: Colors.white
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.only(left: Diminsions.width10),
+                                      padding: EdgeInsets.only(left: Dimensions.width10),
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         mainAxisAlignment: MainAxisAlignment.center,

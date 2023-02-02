@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../diminsions.dart';
+import '../../dimensions.dart';
 import '../../widgets/BText.dart';
 import '../../widgets/SText.dart';
 
@@ -53,9 +53,9 @@ class _FoodRecipyState extends State<FoodRecipy> {
           ),
           SliverToBoxAdapter(
               child: Container(
-                padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
+                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), topLeft: Radius.circular(Diminsions.radius20)),
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20), topLeft: Radius.circular(Dimensions.radius20)),
                   color: Colors.white,
                 ),
                 //===========================NAME OF RECIPY DEATIALS===========================
@@ -66,7 +66,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
           //ingredients section
           SliverToBoxAdapter(
             child: Container(
-              padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
+              padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
               color: Colors.white,
               child: BText(text: "Ingredients", color: Colors.black,),
             )
@@ -74,7 +74,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
           SliverList(delegate: SliverChildBuilderDelegate(
               (context, index){
                 return Container(
-                  padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                   color: Colors.white,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +92,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
           SliverToBoxAdapter(
 
               child: Container(
-                padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
+                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                 color: Colors.white,
                 child: BText(text: "Steps", color: Colors.black,),
               )
@@ -100,7 +100,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
           SliverList(delegate: SliverChildBuilderDelegate(
                 (context, index){
               return Container(
-                padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
+                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

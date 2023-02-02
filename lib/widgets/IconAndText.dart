@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:recies/diminsions.dart';
+import 'package:recies/dimensions.dart';
 import 'package:recies/widgets/SText.dart';
 //=========================== THIS CLASS CAN BE USED TO PASS TEXT AND ICON ALONG WITH IT, MAKE THINGS EASIER IN A WAY I GUESS ===========================
 class IconAndText extends StatelessWidget {
@@ -19,7 +19,7 @@ class IconAndText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: iconColor, size: Diminsions.iconSizeDefault,),
+        Icon(icon, color: iconColor, size: Dimensions.iconSizeDefault,),
         SizedBox(width: 5,),
         SText(text: text, color: color),
       ],
