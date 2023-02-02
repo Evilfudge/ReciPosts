@@ -1,22 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:recies/colors/colorPallete.dart';
-import 'package:recies/widgets/BText.dart';
 
-import 'package:recies/diminsions.dart';
-
+import '../../colors/colorPallete.dart';
+import '../../diminsions.dart';
+import '../../widgets/BText.dart';
 import '../../widgets/SText.dart';
 
-
-
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,14 +36,25 @@ class _SignInState extends State<SignIn> {
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
-                    hintText: "Email",
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(Diminsions.radius20),
-                    borderSide: BorderSide.none),
-                    filled: true,
-                    prefixIcon: Icon(Icons.person, color: ColorPallete.secondary,)
+                      hintText: "Username",
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(Diminsions.radius20),
+                          borderSide: BorderSide.none),
+                      filled: true,
+                      prefixIcon: Icon(Icons.person, color: ColorPallete.secondary,)
                   ),
                 ),
-                //password
+                //Email
+                SizedBox(height: Diminsions.height10,),
+                TextField(
+                  decoration: InputDecoration(
+                      hintText: "Email",
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(Diminsions.radius20),
+                          borderSide: BorderSide.none),
+                      filled: true,
+                      prefixIcon: Icon(Icons.email, color: ColorPallete.secondary,)
+                  ),
+                  obscureText: true,
+                ),
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
@@ -60,12 +68,12 @@ class _SignInState extends State<SignIn> {
                 ),
                 SizedBox(height: Diminsions.height10,),
                 ElevatedButton(
-                    onPressed: (){},
-                    child: SText(text: "Sign In",color: Colors.white, size: Diminsions.font20,),
+                  onPressed: (){},
+                  child: SText(text: "Sign Up",color: Colors.white, size: Diminsions.font20,),
                   style: ElevatedButton.styleFrom(
-                    primary: ColorPallete.secondary,
-                    shape: StadiumBorder(),
-                    padding: EdgeInsets.symmetric(vertical: Diminsions.iconSize16)
+                      primary: ColorPallete.secondary,
+                      shape: StadiumBorder(),
+                      padding: EdgeInsets.symmetric(vertical: Diminsions.iconSize16)
                   ),
                 )
               ],
@@ -74,8 +82,8 @@ class _SignInState extends State<SignIn> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SText(text: "Don't have account? ", color: Colors.black54, size: Diminsions.font16,),
-                TextButton(onPressed: (){}, child: SText(text: "Sign Up", color: ColorPallete.secondary, size: Diminsions.font16,))
+                SText(text: "you have an account? ", color: Colors.black54, size: Diminsions.font16,),
+                TextButton(onPressed: (){}, child: SText(text: "Sign In", color: ColorPallete.secondary, size: Diminsions.font16,))
               ],
             )
           ],

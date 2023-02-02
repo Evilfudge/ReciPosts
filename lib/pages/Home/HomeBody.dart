@@ -125,18 +125,7 @@ class _HomeBodyState extends State<HomeBody> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            BText(text: "Burger recipy", color: Colors.black38,),
-                            SizedBox(height: Diminsions.height10,),
-                            SText(text: "create by someone"),
-                            SizedBox(height: Diminsions.height10,),
-                             Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-
-                         IconAndText(icon: Icons.circle_sharp, text: "Easy", color: ColorPallete.light, iconColor: ColorPallete.prime),
-                         IconAndText(icon: Icons.access_time_rounded, text: "12 min", color: ColorPallete.light, iconColor: ColorPallete.prime)
-                        ],
-                      )
+                            RecipyTitle(text: "burger")
                           ],
                         ),
                         ),
