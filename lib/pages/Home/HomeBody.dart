@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:recies/colors/colorPallete.dart';
 import 'package:recies/diminsions.dart';
+import 'package:recies/pages/Categories/categoriesPage.dart';
 import 'package:recies/pages/recipy_page/foodRecipy.dart';
 import 'package:recies/widgets/BText.dart';
 import 'package:recies/widgets/IconAndText.dart';
@@ -31,8 +32,6 @@ class _HomeBodyState extends State<HomeBody> {
     pageController.addListener(() {
      setState(() {
        _currentPageValue = pageController.page!;
-
-
      });
     });
   }
@@ -53,7 +52,7 @@ class _HomeBodyState extends State<HomeBody> {
           height: Diminsions.pageView,
           child: GestureDetector(
             onTap: (){
-              Get.to(() => FoodRecipy());
+              Get.to(() => CategoriesPage());
             },
             child: PageView.builder(
                 controller: pageController,
@@ -175,6 +174,7 @@ class _HomeBodyState extends State<HomeBody> {
       transform: matrix,
       child: Stack(
         children: [
+          //card image
           Container(
             height: Diminsions.pageViewContainer,
             margin: EdgeInsets.only(left: Diminsions.width10, right: Diminsions.width10),
@@ -192,8 +192,8 @@ class _HomeBodyState extends State<HomeBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Diminsions.pageViewTextContainer,
-              margin: EdgeInsets.only(left: Diminsions.width30, right: Diminsions.width30, bottom: Diminsions.height30),
+              height: Diminsions.pageViewTextContainer80,
+              margin: EdgeInsets.only(left: Diminsions.width30, right: Diminsions.width30, bottom: Diminsions.height45),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Diminsions.radius20),
                   color: Colors.white,
@@ -213,9 +213,15 @@ class _HomeBodyState extends State<HomeBody> {
                     ),
                   ]
               ),
+              //category name
               child: Container(
-                padding: EdgeInsets.only(top: Diminsions.paddingheight15, left: Diminsions.paddingwidth15, right: Diminsions.paddingwidth15),
-                child: RecipyTitle(text: "Burger"),
+                padding: EdgeInsets.only( left: Diminsions.paddingwidth15, right: Diminsions.paddingwidth15),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BText(text: "Food Category ",color: Colors.black87, size: Diminsions.font26,)
+                  ],
+                )
               ),
 
             ),

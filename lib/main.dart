@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:recies/pages/Categories/categoriesPage.dart';
 import 'package:recies/pages/Home/HomePage.dart';
 import 'package:recies/pages/auth%20Pages/signIn.dart';
 import 'package:recies/pages/auth%20Pages/signUp.dart';
