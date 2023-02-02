@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:recies/diminsions.dart';
-
+//===========================THIS CLASS IS USED TO PASS BIG TEXT BY DEFAULT, USER CAN PASS THE COLOR, SIZE, OVERFLOW, AND FONT WEIGHT AS WELL===========================
 class BText extends StatelessWidget {
 
    Color? color;

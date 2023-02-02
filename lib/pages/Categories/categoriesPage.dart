@@ -32,12 +32,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   margin: EdgeInsets.only(left: Diminsions.width30),
                   child: Row(
                     children: [
+                      //===========================ROUTE PART GO TO MAINPAGE===========================
                       GestureDetector(
                           onTap: (){
                             Get.to(() => HomePage());
                           },
                     child: Icon(Icons.arrow_back)),
                       SizedBox(width: Diminsions.width10),
+                      //===========================CATEGORY NAME===========================
                       BText(text: "Category name in here", size: Diminsions.font26, color: Colors.black87,)
                     ],
                   ),
@@ -48,6 +50,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                     shrinkWrap: true,
                     itemCount: 10,
                     itemBuilder: (context, index) {
+                      //===========================ROUTE PART GO TO RECIPYPAGE===========================
                       return GestureDetector(
                         onTap: (){
                           Get.to(() => FoodRecipy());
@@ -56,7 +59,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                           margin: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, bottom: Diminsions.height10),
                           child: Row(
                             children: [
-                              //recipy image
+                              //===========================RECIPY IMAGE===========================
                               Container(
                                 width: Diminsions.imgSize,
                                 height: Diminsions.imgSize,
@@ -65,6 +68,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                     color: Colors.white30,
                                     image: DecorationImage(
                                         fit: BoxFit.cover,
+                                        //===========================RECIPY IMAGE DIRECTORY===========================
                                         image: AssetImage("assets/image/food1.jpeg")
                                     )
                                 ),
@@ -82,6 +86,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         mainAxisAlignment: MainAxisAlignment.center,
+                                        //===========================RECIPY DETAILS===========================
                                         children: [
                                           RecipyTitle(text: "burger")
                                         ],

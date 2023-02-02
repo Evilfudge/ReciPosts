@@ -25,17 +25,17 @@ class _SignInState extends State<SignIn> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // hello!
+            // ===========================GREETING SECTION===========================
             Column(
               children: [
                 BText(text: "Welcome!", color: Colors.black,size: 40, fontWeigt: FontWeight.bold,)
               ],
             ),
-            //input field
+            //===========================INPUT SECTION===========================
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                //email
+                //===========================EMAIL FIELD===========================
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
@@ -46,7 +46,7 @@ class _SignInState extends State<SignIn> {
                     prefixIcon: Icon(Icons.person, color: ColorPallete.secondary,)
                   ),
                 ),
-                //password
+                //===========================PASSWORD FIELD===========================
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
@@ -59,6 +59,7 @@ class _SignInState extends State<SignIn> {
                   obscureText: true,
                 ),
                 SizedBox(height: Diminsions.height10,),
+                //===========================SIGN IN BUTTON===========================
                 ElevatedButton(
                     onPressed: (){},
                     child: SText(text: "Sign In",color: Colors.white, size: Diminsions.font20,),
@@ -70,11 +71,12 @@ class _SignInState extends State<SignIn> {
                 )
               ],
             ),
-            //sign up button
+            //===========================SIGN UP SECTION===========================
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SText(text: "Don't have account? ", color: Colors.black54, size: Diminsions.font16,),
+                //===========================SIGN UP BUTTON===========================
                 TextButton(onPressed: (){}, child: SText(text: "Sign Up", color: ColorPallete.secondary, size: Diminsions.font16,))
               ],
             )
