@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
+// =========================== THIS CLASS IS CALLED TO PASS A SMALL TEXT BY DEFAULT, USER CAN PASS SIZE, COLOR,  AND HEIGHT BETWEEN EACH LINE ===========================
 class SText extends StatelessWidget {
 
   Color? color;

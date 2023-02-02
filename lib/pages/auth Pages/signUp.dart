@@ -22,17 +22,17 @@ class _SignUpState extends State<SignUp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // hello!
+            // ===========================GREETING===========================
             Column(
               children: [
                 BText(text: "Welcome!", color: Colors.black,size: 40, fontWeigt: FontWeight.bold,)
               ],
             ),
-            //input field
+            //===========================INPUT FIELD SECTION===========================
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                //email
+                //===========================USERNAME FIELD===========================
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
@@ -43,7 +43,7 @@ class _SignUpState extends State<SignUp> {
                       prefixIcon: Icon(Icons.person, color: ColorPallete.secondary,)
                   ),
                 ),
-                //Email
+                //===========================EMAIL FIELD===========================
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
@@ -55,6 +55,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   obscureText: true,
                 ),
+                //===========================PASSWORD FIELD===========================
                 SizedBox(height: Diminsions.height10,),
                 TextField(
                   decoration: InputDecoration(
@@ -67,6 +68,7 @@ class _SignUpState extends State<SignUp> {
                   obscureText: true,
                 ),
                 SizedBox(height: Diminsions.height10,),
+                //===========================SIGN UP BUTTON===========================
                 ElevatedButton(
                   onPressed: (){},
                   child: SText(text: "Sign Up",color: Colors.white, size: Diminsions.font20,),
@@ -78,7 +80,7 @@ class _SignUpState extends State<SignUp> {
                 )
               ],
             ),
-            //sign up button
+            //===========================SING IN SECTION===========================
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

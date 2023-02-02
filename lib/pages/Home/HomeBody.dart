@@ -46,10 +46,11 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //silder
+        //===========================SLIDER===========================
         Container(
 
           height: Diminsions.pageView,
+          //===========================ROUTES GO TO CATEGORY PAGE===========================
           child: GestureDetector(
             onTap: (){
               Get.to(() => CategoriesPage());
@@ -62,7 +63,7 @@ class _HomeBodyState extends State<HomeBody> {
                 }),
           ),
         ),
-        //dots slide indicators
+        //===========================DOTS SLIDER INDICATOR===========================
             new DotsIndicator(
             dotsCount: 5,
             position: _currentPageValue,
@@ -73,7 +74,7 @@ class _HomeBodyState extends State<HomeBody> {
             activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
             ),
     ),
-        //recent part header
+        //===========================RECENT SECTION TITLE===========================
         SizedBox(height: Diminsions.height30,),
         Container(
           margin: EdgeInsets.only(left: Diminsions.width30),
@@ -83,12 +84,13 @@ class _HomeBodyState extends State<HomeBody> {
             ],
           ),
         ),
-        //list of recent      
+        //===========================RECENT SECTION LIST===========================
           ListView.builder(
            physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (context, index) {
+             //===========================ROUTES GO TO RECIPY PAGE===========================
             return GestureDetector(
               onTap: (){
                 Get.to(() => FoodRecipy());
@@ -142,7 +144,7 @@ class _HomeBodyState extends State<HomeBody> {
     );
   }
   Widget _buildPageItem(int index){
-
+    //===========================MAKING SLIDING EFFECT FOR STACK WIDGET===========================
     Matrix4 matrix = Matrix4.identity();
 
     if (index == _currentPageValue.floor()){
@@ -174,7 +176,7 @@ class _HomeBodyState extends State<HomeBody> {
       transform: matrix,
       child: Stack(
         children: [
-          //card image
+          //===========================SLIDER IMAGE===========================
           Container(
             height: Diminsions.pageViewContainer,
             margin: EdgeInsets.only(left: Diminsions.width10, right: Diminsions.width10),
@@ -189,6 +191,7 @@ class _HomeBodyState extends State<HomeBody> {
                 )
             ),
           ),
+          //===========================CARD ABOVE THE IMAGE PROPERTIES===========================
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -213,7 +216,7 @@ class _HomeBodyState extends State<HomeBody> {
                     ),
                   ]
               ),
-              //category name
+              //===========================CATEGORY NAME===========================
               child: Container(
                 padding: EdgeInsets.only( left: Diminsions.paddingwidth15, right: Diminsions.paddingwidth15),
                 child: Column(

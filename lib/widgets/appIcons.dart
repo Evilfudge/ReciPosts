@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:recies/diminsions.dart';
-
+//=========================== THIS CLASS CAN BE USED TO MAKE ICON WITH ROUND BACKGROUND ===========================
 class AppIcons extends StatelessWidget {
   final IconData icon;
   final Color color;

@@ -24,15 +24,18 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               margin: EdgeInsets.only(top: Diminsions.height45, bottom: Diminsions.paddingheight15),
               padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20),
+              //===========================HEADER SECTION===========================
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //===========================GREETING===========================
                   Column(
                     children: [
                       BText(text: "Welcome Back!", color: ColorPallete.secondary),
 
                     ],
                   ),
+                  //===========================HEADER SEARCH ICON===========================
                   Center(
                     child: Container(
                       width: Diminsions.width45,
@@ -50,6 +53,7 @@ class _HomePageState extends State<HomePage> {
 
           ),
           Expanded(child: SingleChildScrollView(
+            //===========================METHOD TO CALL HOME PAGE BODY===========================
             child: HomeBody(),
           )),
         ],

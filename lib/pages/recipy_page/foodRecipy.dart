@@ -18,6 +18,7 @@ class FoodRecipy extends StatefulWidget {
 }
 
 class _FoodRecipyState extends State<FoodRecipy> {
+  //===========================GETTING LIST OF THE RECIPY STEPS AND INGREDIENTS===========================
   static List ingredients = ["hello world1","hello world2","hello world3","hello world4","hello world5","hello world1","hello world2","hello world3","hello world4","hello world5"];
   final List<ListViewRecipe> data = List.generate(
       ingredients.length,
@@ -33,6 +34,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
         slivers: [
           SliverAppBar(
             toolbarHeight: 50,
+            //===========================HEADER SECTION===========================
             title: Row(
                 children: [
                   //AppIcons(icon: Icons.arrow_back),
@@ -40,6 +42,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
             ),
             pinned: true,
             expandedHeight:300,
+            //===========================FOOD RECIPY IMAGE===========================
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
                 "assets/image/food1.jpeg",
@@ -55,6 +58,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
                   borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), topLeft: Radius.circular(Diminsions.radius20)),
                   color: Colors.white,
                 ),
+                //===========================NAME OF RECIPY DEATIALS===========================
                 child: RecipyTitle(text: "Burger"),
                 width: double.maxFinite,
               )
@@ -74,6 +78,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
                   color: Colors.white,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //===========================INGREDIENTS SECTION===========================
                     children: [
                       SText(text: data[index].datas, height: 1.8,),
                       SText(text: data[index].datas, height: 1.8,)
@@ -99,6 +104,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  //===========================STEPS SECTION===========================
                   children: [
                     SText(text: data[index].datas, height: 1.8,),
                   ],

@@ -6,7 +6,7 @@ import '../diminsions.dart';
 import 'BText.dart';
 import 'IconAndText.dart';
 import 'SText.dart';
-
+//=========================== THIS SECTION IS USED TO PASS A WIDGET THAT CONTAIN THE TITLE OF THE FOOD, TIME TAKES TO BE PREPARED AND THE RANK OF IT ===========================
 class RecipyTitle extends StatelessWidget {
   final String text;
   const RecipyTitle({Key? key, required this.text}) : super(key: key);
