@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
 //class to call when you need responsive icons, containers, text and images
+//screen size based on calculations is 844
 class Diminsions{
-
   static double screenHeight = Get.context!.height;
   static double screenWidth = Get.context!.width;
 
   static double pageViewContainer = screenHeight / 3.84;
   static double pageViewTextContainer = screenHeight / 7.03;
+  static double pageViewTextContainer80 = screenHeight / 10.55;
   static double pageView = screenHeight / 2.64;
   static double height10 = screenHeight / 84.4;
   static double height20 = screenHeight / 42.2;

@@ -29,7 +29,6 @@ class _FoodRecipyState extends State<FoodRecipy> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -39,9 +38,7 @@ class _FoodRecipyState extends State<FoodRecipy> {
                   //AppIcons(icon: Icons.arrow_back),
                 ],
             ),
-
             pinned: true,
-
             expandedHeight:300,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
@@ -64,7 +61,6 @@ class _FoodRecipyState extends State<FoodRecipy> {
           ),
           //ingredients section
           SliverToBoxAdapter(
-
             child: Container(
               padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
               color: Colors.white,
@@ -84,9 +80,6 @@ class _FoodRecipyState extends State<FoodRecipy> {
                     ],
                   ),
                   );
-
-
-
               },
             childCount: ingredients.length,
           )),
@@ -108,13 +101,9 @@ class _FoodRecipyState extends State<FoodRecipy> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SText(text: data[index].datas, height: 1.8,),
-
                   ],
                 ),
               );
-
-
-
             },
             childCount: ingredients.length,
           )),
