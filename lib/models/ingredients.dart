@@ -16,4 +16,10 @@ class Ingredients {
     "quantity": quantity,
     "required": required
   };
+  static Ingredients fromJson(Map<String, dynamic> json) => Ingredients(
+      name: json['name'],
+      unit: json['unit'],
+      quantity: json['quantity'],
+      required: json['required']
+  );
 }

@@ -30,49 +30,49 @@ class _FoodRecipyState extends State<FoodRecipy> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: 50,
-            //===========================HEADER SECTION===========================
-            title: Row(
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              toolbarHeight: 50,
+              //===========================HEADER SECTION===========================
+              title: Row(
                 children: [
                   //AppIcons(icon: Icons.arrow_back),
                 ],
-            ),
-            pinned: true,
-            expandedHeight:300,
-            //===========================FOOD RECIPY IMAGE===========================
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "assets/image/food1.jpeg",
-                 width: double.maxFinite,
-                fit: BoxFit.cover
+              ),
+              pinned: true,
+              expandedHeight:300,
+              //===========================FOOD RECIPY IMAGE===========================
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset(
+                    "assets/image/food1.jpeg",
+                    width: double.maxFinite,
+                    fit: BoxFit.cover
+                ),
               ),
             ),
-          ),
-          SliverToBoxAdapter(
-              child: Container(
-                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20), topLeft: Radius.circular(Dimensions.radius20)),
+            SliverToBoxAdapter(
+                child: Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20), topLeft: Radius.circular(Dimensions.radius20)),
+                    color: Colors.white,
+                  ),
+                  //===========================NAME OF RECIPY DEATIALS===========================
+                  child: RecipyTitle(text: "Burger"),
+                  width: double.maxFinite,
+                )
+            ),
+            //ingredients section
+            SliverToBoxAdapter(
+                child: Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                   color: Colors.white,
-                ),
-                //===========================NAME OF RECIPY DEATIALS===========================
-                child: RecipyTitle(text: "Burger"),
-                width: double.maxFinite,
-              )
-          ),
-          //ingredients section
-          SliverToBoxAdapter(
-            child: Container(
-              padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
-              color: Colors.white,
-              child: BText(text: "Ingredients", color: Colors.black,),
-            )
-          ),
-          SliverList(delegate: SliverChildBuilderDelegate(
-              (context, index){
+                  child: BText(text: "Ingredients", color: Colors.black,),
+                )
+            ),
+            SliverList(delegate: SliverChildBuilderDelegate(
+                  (context, index){
                 return Container(
                   padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                   color: Colors.white,
@@ -84,38 +84,38 @@ class _FoodRecipyState extends State<FoodRecipy> {
                       SText(text: data[index].datas, height: 1.8,)
                     ],
                   ),
-                  );
+                );
               },
-            childCount: ingredients.length,
-          )),
-          //steps section
-          SliverToBoxAdapter(
+              childCount: ingredients.length,
+            )),
+            //steps section
+            SliverToBoxAdapter(
 
-              child: Container(
-                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
-                color: Colors.white,
-                child: BText(text: "Steps", color: Colors.black,),
-              )
-          ),
-          SliverList(delegate: SliverChildBuilderDelegate(
-                (context, index){
-              return Container(
-                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  //===========================STEPS SECTION===========================
-                  children: [
-                    SText(text: data[index].datas, height: 1.8,),
-                  ],
-                ),
-              );
-            },
-            childCount: ingredients.length,
-          )),
+                child: Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
+                  color: Colors.white,
+                  child: BText(text: "Steps", color: Colors.black,),
+                )
+            ),
+            SliverList(delegate: SliverChildBuilderDelegate(
+                  (context, index){
+                return Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    //===========================STEPS SECTION===========================
+                    children: [
+                      SText(text: data[index].datas, height: 1.8,),
+                    ],
+                  ),
+                );
+              },
+              childCount: ingredients.length,
+            )),
 
-        ],
-      )
+          ],
+        )
 
     );
   }

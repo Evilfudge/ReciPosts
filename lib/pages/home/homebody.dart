@@ -1,5 +1,5 @@
+import 'dart:io';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:recies/colors/colorPallete.dart';
@@ -8,7 +8,8 @@ import 'package:recies/pages/Categories/categoriesPage.dart';
 import 'package:recies/pages/recipy_page/foodRecipy.dart';
 import 'package:recies/widgets/BText.dart';
 import 'package:recies/widgets/recipyTitle.dart';
-
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -20,9 +21,9 @@ class HomeBody extends StatefulWidget {
 class _HomeBodyState extends State<HomeBody> {
   PageController pageController = PageController(viewportFraction: 0.85 );
   var _currentPageValue = 0.0;
-  double _scaleFactor = 0.8;
-  double _height = Dimensions.pageViewContainer;
-
+  final double _scaleFactor = 0.8;
+  final double _height = Dimensions.pageViewContainer;
+  String? imgUrl;
   @override
   void initState(){
     super.initState();
@@ -39,14 +40,47 @@ class _HomeBodyState extends State<HomeBody> {
     pageController.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //===========================SLIDER===========================
-        Container(
+        IconButton(
+            onPressed:() async {
+              ImagePicker img = ImagePicker();
+              XFile? imgFile = await img.pickImage(source: ImageSource.gallery);
 
+              if(imgFile == null) return;
+              // Create reference directory
+              Reference refRoot = FirebaseStorage.instance.ref();
+              Reference refDirImg = refRoot.child('images');
+              // Create file reference
+              Reference refImgToUpload = refDirImg.child('${imgFile?.name}');
+
+              // Exception Handling
+              try{
+                // Store the image
+                await refImgToUpload.putFile(File(imgFile!.path));
+                imgUrl = await refImgToUpload.getDownloadURL();
+              }catch(e){
+                print(e.toString());
+              }
+            },
+            icon: const Icon(Icons.add)
+        ),
+        // IconButton(
+        //     onPressed:() async {
+        //       imgUrl = await storage.ref('images').getDownloadURL();
+        //       Map<String, String> ImgToFirebase = {
+        //         'image': imgUrl!,
+        //       };
+        //
+        //       //add Image
+        //       //_reference.add(ImgToFirebase);
+        //     },
+        //     icon: const Icon(Icons.add)
+        // ),
+        //===========================SLIDER===========================
+        SizedBox(
           height: Dimensions.pageView,
           //===========================ROUTES GO TO CATEGORY PAGE===========================
           child: GestureDetector(
@@ -62,7 +96,7 @@ class _HomeBodyState extends State<HomeBody> {
           ),
         ),
         //===========================DOTS SLIDER INDICATOR===========================
-            new DotsIndicator(
+            DotsIndicator(
             dotsCount: 5,
             position: _currentPageValue,
             decorator: DotsDecorator(
@@ -104,7 +138,7 @@ class _HomeBodyState extends State<HomeBody> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(Dimensions.radius20), bottomLeft: Radius.circular(Dimensions.radius20)),
                         color: Colors.white30,
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/image/food1.jpeg")
                         )
@@ -123,7 +157,7 @@ class _HomeBodyState extends State<HomeBody> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             RecipyTitle(text: "burger")
                           ],
                         ),
@@ -180,8 +214,8 @@ class _HomeBodyState extends State<HomeBody> {
             margin: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
-                color: Color(0xFF69c5df),
-                image: DecorationImage(
+                color: const Color(0xFF69c5df),
+                image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
                         "assets/image/food1.jpeg"
@@ -198,7 +232,7 @@ class _HomeBodyState extends State<HomeBody> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Color(0xFFe8e8e8),
                       blurRadius: 5.0,
