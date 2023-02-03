@@ -14,6 +14,7 @@ Provide a platform to browse and share recipes that are tailored for their prefe
 ## Routing 
 https://i.imgur.com/uYeKFWH.png
 ## Sequence Diagram
-https://i.imgur.com/TmlwZ0T.png
+![ReciPosts drawio](https://user-images.githubusercontent.com/48901690/216516705-e63beac8-60d1-4ccc-994e-fc32c28f2d5c.png)
 ## References
 https://www.themanual.com/food-and-drink/best-recipe-apps/
+
