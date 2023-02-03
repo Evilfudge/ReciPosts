@@ -1,9 +1,11 @@
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../dimensions.dart';
+import '../../models/ingredients.dart';
 import '../../widgets/BText.dart';
 import '../../widgets/SText.dart';
 
@@ -113,10 +115,23 @@ class _FoodRecipyState extends State<FoodRecipy> {
               },
               childCount: ingredients.length,
             )),
-
           ],
         )
-
     );
   }
+  Widget buildIngredients(Ingredients ingredients) => ListTile(
+    title: Text(ingredients.name),
+    trailing: Text('${ingredients.quantity}''${ingredients.unit}'),
+    tileColor: ingredients.required == true ? Colors.green[200] : Colors.amber[300],
+  );
+
+  Stream<List<Ingredients>> readIngredients() =>
+        FirebaseFirestore.instance
+          .collection('ingredients')
+          .snapshots()
+          .map((snapshot) =>
+          snapshot.docs.map((doc) =>
+              Ingredients.fromJson(doc.data())
+          ).toList()
+      );
 }
