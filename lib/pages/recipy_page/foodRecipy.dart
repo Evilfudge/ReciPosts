@@ -1,9 +1,11 @@
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../diminsions.dart';
+import '../../dimensions.dart';
+import '../../models/ingredients.dart';
 import '../../widgets/BText.dart';
 import '../../widgets/SText.dart';
 
@@ -30,51 +32,51 @@ class _FoodRecipyState extends State<FoodRecipy> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: 50,
-            //===========================HEADER SECTION===========================
-            title: Row(
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              toolbarHeight: 50,
+              //===========================HEADER SECTION===========================
+              title: Row(
                 children: [
                   //AppIcons(icon: Icons.arrow_back),
                 ],
-            ),
-            pinned: true,
-            expandedHeight:300,
-            //===========================FOOD RECIPY IMAGE===========================
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "assets/image/food1.jpeg",
-                 width: double.maxFinite,
-                fit: BoxFit.cover
+              ),
+              pinned: true,
+              expandedHeight:300,
+              //===========================FOOD RECIPY IMAGE===========================
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset(
+                    "assets/image/food1.jpeg",
+                    width: double.maxFinite,
+                    fit: BoxFit.cover
+                ),
               ),
             ),
-          ),
-          SliverToBoxAdapter(
-              child: Container(
-                padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(Diminsions.radius20), topLeft: Radius.circular(Diminsions.radius20)),
+            SliverToBoxAdapter(
+                child: Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20), topLeft: Radius.circular(Dimensions.radius20)),
+                    color: Colors.white,
+                  ),
+                  //===========================NAME OF RECIPY DEATIALS===========================
+                  child: RecipyTitle(text: "Burger"),
+                  width: double.maxFinite,
+                )
+            ),
+            //ingredients section
+            SliverToBoxAdapter(
+                child: Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                   color: Colors.white,
-                ),
-                //===========================NAME OF RECIPY DEATIALS===========================
-                child: RecipyTitle(text: "Burger"),
-                width: double.maxFinite,
-              )
-          ),
-          //ingredients section
-          SliverToBoxAdapter(
-            child: Container(
-              padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
-              color: Colors.white,
-              child: BText(text: "Ingredients", color: Colors.black,),
-            )
-          ),
-          SliverList(delegate: SliverChildBuilderDelegate(
-              (context, index){
+                  child: BText(text: "Ingredients", color: Colors.black,),
+                )
+            ),
+            SliverList(delegate: SliverChildBuilderDelegate(
+                  (context, index){
                 return Container(
-                  padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
                   color: Colors.white,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,39 +86,52 @@ class _FoodRecipyState extends State<FoodRecipy> {
                       SText(text: data[index].datas, height: 1.8,)
                     ],
                   ),
-                  );
+                );
               },
-            childCount: ingredients.length,
-          )),
-          //steps section
-          SliverToBoxAdapter(
+              childCount: ingredients.length,
+            )),
+            //steps section
+            SliverToBoxAdapter(
 
-              child: Container(
-                padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
-                color: Colors.white,
-                child: BText(text: "Steps", color: Colors.black,),
-              )
-          ),
-          SliverList(delegate: SliverChildBuilderDelegate(
-                (context, index){
-              return Container(
-                padding: EdgeInsets.only(left: Diminsions.width20, right: Diminsions.width20, top: Diminsions.height20),
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  //===========================STEPS SECTION===========================
-                  children: [
-                    SText(text: data[index].datas, height: 1.8,),
-                  ],
-                ),
-              );
-            },
-            childCount: ingredients.length,
-          )),
-
-        ],
-      )
-
+                child: Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
+                  color: Colors.white,
+                  child: BText(text: "Steps", color: Colors.black,),
+                )
+            ),
+            SliverList(delegate: SliverChildBuilderDelegate(
+                  (context, index){
+                return Container(
+                  padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height20),
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    //===========================STEPS SECTION===========================
+                    children: [
+                      SText(text: data[index].datas, height: 1.8,),
+                    ],
+                  ),
+                );
+              },
+              childCount: ingredients.length,
+            )),
+          ],
+        )
     );
   }
+  Widget buildIngredients(Ingredients ingredients) => ListTile(
+    title: Text(ingredients.name),
+    trailing: Text('${ingredients.quantity}''${ingredients.unit}'),
+    tileColor: ingredients.required == true ? Colors.green[200] : Colors.amber[300],
+  );
+
+  Stream<List<Ingredients>> readIngredients() =>
+        FirebaseFirestore.instance
+          .collection('ingredients')
+          .snapshots()
+          .map((snapshot) =>
+          snapshot.docs.map((doc) =>
+              Ingredients.fromJson(doc.data())
+          ).toList()
+      );
 }

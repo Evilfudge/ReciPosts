@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../colors/colorPallete.dart';
-import '../diminsions.dart';
+import '../dimensions.dart';
 import 'BText.dart';
 import 'IconAndText.dart';
 import 'SText.dart';
@@ -16,15 +16,15 @@ class RecipyTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        BText(text: text, size: Diminsions.font26, color: Colors.black,),
-        SizedBox(height: Diminsions.height10,),
+        BText(text: text, size: Dimensions.font26, color: Colors.black,),
+        SizedBox(height: Dimensions.height10,),
         Row(
           children: [
             SText(text: "number of recipies"),
 
           ],
         ),
-        SizedBox(height: Diminsions.height20,),
+        SizedBox(height: Dimensions.height20,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

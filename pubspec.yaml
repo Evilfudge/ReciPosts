@@ -11,10 +11,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dots_indicator: ^2.1.0
-  get: ^4.6.5
   cupertino_icons: ^1.0.2
   fluttericon: ^2.0.0
+  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.5
+  firebase_analytics: ^5.0.6
+  cloud_firestore: ^4.3.1
+  provider: ^6.0.5
+  flutter_spinkit: ^5.1.0
+  get: ^4.6.5
+  dots_indicator: ^2.1.0
+  path: ^1.8.0
+  image_picker: ^0.8.4
+  firebase_storage: ^11.0.10
+  image_picker_windows: ^0.1.0+3
+  
 
 dev_dependencies:
   flutter_test:

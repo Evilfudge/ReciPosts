@@ -1,14 +1,17 @@
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:recies/pages/Categories/categoriesPage.dart';
-import 'package:recies/pages/Home/HomePage.dart';
-import 'package:recies/pages/auth%20Pages/signIn.dart';
-import 'package:recies/pages/auth%20Pages/signUp.dart';
-import 'package:recies/pages/recipy_page/foodRecipy.dart';
+import 'package:provider/provider.dart';
+import 'package:recies/controller/authenticate.dart';
+import 'package:recies/models/reciposts_user.dart';
+import 'package:recies/pages/wrapper.dart';
 
-//hello world
-
-void main() {
+Future <void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform
+  );
   runApp(const MyApp());
 }
 
@@ -18,13 +21,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return StreamProvider<RecipostsUser?>.value(
+      catchError: (context, error) => null,
+      initialData: null,
+      value: AuthService().user,
+      child: GetMaterialApp(
+        title: 'ReciPosts',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.amber,
+        ),
+        home: const Wrapper(),
       ),
-      home: const HomePage(),
     );
   }
 }
